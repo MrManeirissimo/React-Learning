@@ -4,5 +4,7 @@ import ReactDOM from 'react-dom';
 // import App from './App';
 // import * as serviceWorker from './serviceWorker';
 
+// Sample of how you wold inform react to display
+// elements inside DOM
 const sample_element = <h2>Hello world</h2>
 ReactDOM.render(sample_element, document.getElementById('root'));
