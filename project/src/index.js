@@ -4,14 +4,22 @@ import ReactDOM from 'react-dom';
 // import App from './App';
 // import * as serviceWorker from './serviceWorker';
 
+// Encapsulation sample
+// Creating a 'function component' to wrap a functionality
+function Clock(props){
+    return (
+        <h2>It is: {props.date.toLocaleTimeString()}.</h2>
+    );
+}
+
 // Looping application sample
 function tick(){
-    
+
     // Sample of embeding JScode inside HTML/React element
     const sample_element = (
         <div>
-            <h1>Hello world!</h1>
-            <h2>It is: {new Date().toLocaleTimeString()}.</h2>
+            <h1>What time is it?</h1>
+            <Clock date={new Date()}/>
         </div>
     );
 
