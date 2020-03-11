@@ -4,7 +4,22 @@ import ReactDOM from 'react-dom';
 // import App from './App';
 // import * as serviceWorker from './serviceWorker';
 
-// Sample of how you wold inform react to display
-// elements inside DOM
-const sample_element = <h2>Hello world</h2>
-ReactDOM.render(sample_element, document.getElementById('root'));
+// Sample function with one parameter
+function formatUsername(user){
+    return user.first + ' ' + user.last;
+}
+
+// User defined variable
+const sample_user = {
+    first: 'Sarah',
+    last: 'Connor'
+}
+
+// Sample of embeding JScode inside HTML/React element
+const sample_element = <h2>Hello, {formatUsername(sample_user)}</h2>
+
+// Render step
+ReactDOM.render(
+    sample_element,
+     document.getElementById('root')
+);
