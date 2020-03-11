@@ -4,22 +4,20 @@ import ReactDOM from 'react-dom';
 // import App from './App';
 // import * as serviceWorker from './serviceWorker';
 
-// Sample function with one parameter
-function formatUsername(user){
-    return user.first + ' ' + user.last;
-}
+// Looping application sample
+function tick(){
+    
+    // Sample of embeding JScode inside HTML/React element
+    const sample_element = (
+        <div>
+            <h1>Hello world!</h1>
+            <h2>It is: {new Date().toLocaleTimeString()}.</h2>
+        </div>
+    );
 
-// User defined variable
-const sample_user = {
-    first: 'Sarah',
-    last: 'Connor'
-}
-
-// Sample of embeding JScode inside HTML/React element
-const sample_element = <h2>Hello, {formatUsername(sample_user)}</h2>
-
-// Render step
-ReactDOM.render(
-    sample_element,
-     document.getElementById('root')
-);
+    // Render step
+    ReactDOM.render(
+        sample_element,
+        document.getElementById('root')
+    );
+} setInterval(tick, 1000);
