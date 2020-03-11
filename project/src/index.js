@@ -7,33 +7,42 @@ import ReactDOM from 'react-dom';
 // Turning function component into component class
 // Remember the class must be evaluated as an element
 class Clock extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {date: new Date()};
+    }
+
+    //The componentDidMount() method runs after the component output has been rendered
+    // to the DOM. This is a good place to set up a timer:
+    componentDidMount(){
+        this.timerID = setInterval(
+            ()=> this.tick(),
+            1000
+        )
+    }
+
+    componentWillUnmount(){
+        clearInterval(this.timerID);
+    }
+
     render(){
         return(
             <div>
                 <h1>What time is it?</h1>
-                <h2>It is: {this.props.date.toLocaleTimeString()}.</h2>
+                <h2>It is: {this.state.date.toLocaleTimeString()}.</h2>
             </div>
         );
     }
+
+    tick(){
+        this.setState({
+            date: new Date()
+        })
+    }
 }
 
-// Old clock function component
-
-// function Clock(props){
-//     return (
-//         <div>
-//             <h1>What time is it?</h1>
-//             <h2>It is: {props.date.toLocaleTimeString()}.</h2>
-//         </div>
-//     );
-// }
-
-// Looping application sample
-function tick(){
-
-    // Render step. Direct render-to-component link
-    ReactDOM.render(
-        <Clock date= {new Date()}/>,
-        document.getElementById('root')
-    );
-} setInterval(tick, 1000);
+// Render step. Direct render-to-component link
+ReactDOM.render(
+    <Clock />,
+    document.getElementById('root')
+);
