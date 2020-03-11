@@ -4,15 +4,17 @@ import ReactDOM from 'react-dom';
 // import App from './App';
 // import * as serviceWorker from './serviceWorker';
 
-// Encapsulation sample
-// Creating a 'function component' to wrap a functionality
-function Clock(props){
-    return (
-        <div>
-            <h1>What time is it?</h1>
-            <h2>It is: {props.date.toLocaleTimeString()}.</h2>
-        </div>
-    );
+// Turning function component into component class
+// Remember the class must be evaluated as an element
+class Clock extends React.Component{
+    render(){
+        return(
+            <div>
+                <h1>What time is it?</h1>
+                <h2>It is: {this.props.date.toLocaleTimeString()}.</h2>
+            </div>
+        );
+    }
 }
 
 // Looping application sample
