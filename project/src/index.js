@@ -8,24 +8,19 @@ import ReactDOM from 'react-dom';
 // Creating a 'function component' to wrap a functionality
 function Clock(props){
     return (
-        <h2>It is: {props.date.toLocaleTimeString()}.</h2>
+        <div>
+            <h1>What time is it?</h1>
+            <h2>It is: {props.date.toLocaleTimeString()}.</h2>
+        </div>
     );
 }
 
 // Looping application sample
 function tick(){
 
-    // Sample of embeding JScode inside HTML/React element
-    const sample_element = (
-        <div>
-            <h1>What time is it?</h1>
-            <Clock date={new Date()}/>
-        </div>
-    );
-
-    // Render step
+    // Render step. Direct render-to-component link
     ReactDOM.render(
-        sample_element,
+        <Clock date= {new Date()}/>,
         document.getElementById('root')
     );
 } setInterval(tick, 1000);
