@@ -17,6 +17,17 @@ class Clock extends React.Component{
     }
 }
 
+// Old clock function component
+
+// function Clock(props){
+//     return (
+//         <div>
+//             <h1>What time is it?</h1>
+//             <h2>It is: {props.date.toLocaleTimeString()}.</h2>
+//         </div>
+//     );
+// }
+
 // Looping application sample
 function tick(){
 
