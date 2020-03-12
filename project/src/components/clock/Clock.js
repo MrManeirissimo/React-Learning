@@ -6,6 +6,11 @@ import Header from '../header'
 // When rendered expands the JSX elements and uses it's 'date' internal state to display time accurately
 // When disabled clears the timer
 
+/* Thanks to the setState() call, React knows the state has changed,
+ and calls the render() method again to learn
+  what should be on the screen. 
+*/
+
 // Turning function component into component class
 // Remember the class must be evaluated as an element
 class Clock extends React.Component{
