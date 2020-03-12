@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import './index.css';
-// import App from './App';
-// import * as serviceWorker from './serviceWorker';
+
+// Importation example
+import Header from '../src/components/header'
 
 // Turning function component into component class
 // Remember the class must be evaluated as an element
@@ -28,6 +28,7 @@ class Clock extends React.Component{
     render(){
         return(
             <div>
+                <Header/>
                 <h1>What time is it?</h1>
                 <h2>It is: {this.state.date.toLocaleTimeString()}.</h2>
             </div>
