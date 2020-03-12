@@ -1,5 +1,10 @@
 import React from 'react'
 import Header from '../header'
+// Clock class description
+// When it constructs it instantiates a new date object and adds it to its states (component)
+// When first displayed (componentDidMount) sets an internal loop (nodeJS API) tied to the tick method
+// When rendered expands the JSX elements and uses it's 'date' internal state to display time accurately
+// When disabled clears the timer
 
 // Turning function component into component class
 // Remember the class must be evaluated as an element
